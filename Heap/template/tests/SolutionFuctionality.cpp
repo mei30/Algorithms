@@ -1,16 +1,17 @@
 #include <gtest/gtest.h>
 
 #include "Solution.h"
+#include <queue>
 
-class HeapFunctionality: public ::testing::Test
+class MaxHeapFunctionality: public ::testing::Test
 {
 public:
-	HeapFunctionality() = default;
+	MaxHeapFunctionality() = default;
 
-	Heap heap;
+	Heap<int> heap;
 };
 
-TEST_F(HeapFunctionality,
+TEST_F(MaxHeapFunctionality,
 		heap_sould_always_get_the_topest_element_after_adding_multiple_elements)
 {
 	// Arrange
@@ -27,21 +28,21 @@ TEST_F(HeapFunctionality,
 	EXPECT_EQ(topest, heap.top());
 }
 
-TEST_F(HeapFunctionality,
+TEST_F(MaxHeapFunctionality,
 		getting_top_of_heap_if_heap_is_empty_heap_should_throw_out_of_range_exception)
 {
 	// Assert
 	EXPECT_THROW(heap.top(), std::out_of_range);
 }
 
-TEST_F(HeapFunctionality,
+TEST_F(MaxHeapFunctionality,
 		poping_from_empty_heap_should_throw_out_of_range_exception)
 {
 	// Assert
 	EXPECT_THROW(heap.top(), std::out_of_range);
 }
 
-TEST_F(HeapFunctionality,
+TEST_F(MaxHeapFunctionality,
 		consecutive_heapify_and_poping_from_heap_should_get_the_right_topest_element)
 {
 	// Act

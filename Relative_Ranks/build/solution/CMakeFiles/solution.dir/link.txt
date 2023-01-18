@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsolution.a CMakeFiles/solution.dir/Solution.cpp.o
+/usr/bin/ranlib libsolution.a

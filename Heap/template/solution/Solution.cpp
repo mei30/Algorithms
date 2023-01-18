@@ -4,35 +4,41 @@
 #include <iterator>
 #include <cmath>
 
-void Heap::heapify(int element)
+template <typename T, typename Allocator,
+		typename Comparator>
+void Heap<T, Allocator, Comparator>::heapify(T element)
 {
 	Iterator inserted_iterator =
-			_underlying_type.insert(_underlying_type.begin(), element);
+			_underlying_type.insert(_underlying_type.end(), element);
 
 	int inserted_index =
 			std::distance(_underlying_type.begin(), inserted_iterator);
 	int parent_index = floor(inserted_index / 2);
 
+	Comparator cmp;
 	while (parent_index != 0)
 	{
 		auto& parent_element = _underlying_type[parent_index];
 		auto& child_element = _underlying_type[inserted_index];
 
-		if (parent_element > child_element)
-			std::swap(parent_element, child_element);
+		if (!cmp(child_element, parent_element))
+			break;
 
+		std::swap(parent_element, child_element);
 		parent_index = floor(parent_index / 2);
 	}
 }
 
-int Heap::top() const
+template <typename T, typename Allocator, typename Comparator>
+T Heap<T, Allocator, Comparator>::top() const
 {
 	if (_underlying_type.empty())
 		throw std::out_of_range("The heap is empty");
 	return *_underlying_type.begin();
 }
 
-void Heap::pop()
+template <typename T, typename Allocator, typename Comparator>
+void Heap<T, Allocator, Comparator>::pop()
 {
 	if (_underlying_type.empty())
 		throw std::out_of_range("The heap is empty");
@@ -79,3 +85,5 @@ void Heap::pop()
 			break;
 	}
 }
+
+template class Heap<int>;
