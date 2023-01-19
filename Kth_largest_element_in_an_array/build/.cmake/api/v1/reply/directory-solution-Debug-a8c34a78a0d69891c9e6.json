@@ -1,0 +1,61 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"solution/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "/home/meisam/Documents/Algorithms/Kth_largest_element_in_an_array/template/lib",
+			"paths" : 
+			[
+				"solution/libsolution.a"
+			],
+			"targetId" : "solution::@e5e88c50852dbdcc79dc",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/home/meisam/Documents/Algorithms/Kth_largest_element_in_an_array/template/lib",
+			"paths" : 
+			[
+				"solution/Solution.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "solution",
+		"source" : "solution"
+	}
+}

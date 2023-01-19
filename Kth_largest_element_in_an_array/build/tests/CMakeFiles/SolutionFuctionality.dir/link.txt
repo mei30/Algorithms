@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/SolutionFuctionality.dir/SolutionFuctionality.cpp.o -o SolutionFuctionality  ../solution/libsolution.a /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 
